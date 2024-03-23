@@ -120,5 +120,8 @@ span {
     form button {
       margin-left: 92%;
     }
+    #age-results p {
+      font-size: 5em;
+    }
   }
   
