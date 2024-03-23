@@ -13,9 +13,42 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: var(--light-grey);
 }
 
 input {
     font-size: 32px;
 }
 
+.container {
+    background-color: var(--white);
+    padding: 2em;
+}
+
+.age-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+form p {
+    font-weight: 600;
+    color: var(--smokey-grey);
+    letter-spacing: 2px;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+}
+
+form input {
+    border-radius: 5px;
+    border: var(--light-grey) 1.75px solid;
+    padding: .25em .50em;
+}
+
+form button {
+    background-color: var(--purple);
+    border: none;
+    padding: 1.25em;
+    border-radius: 50%;
+}

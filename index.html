@@ -14,39 +14,49 @@
     <div class="container">
 
       <form id="ageForm">
-        <p>Day</p>
-        <input
-          type="number"
-          id="day"
-          name="day"
-          min="1"
-          max="31"
-          id="day-input"
-          required
-        />
-  
-        <p>Month</p>
-        <input
-          type="number"
-          id="month"
-          name="month"
-          min="1"
-          max="12"
-          id="month-input"
-          required
-        />
-  
-        <p>Year</p>
-        <input
-          type="number"
-          id="year"
-          name="year"
-          min="1900"
-          max="2024"
-          id="year-input"
-          required
-        />
-        
+
+        <div class="age-inputs">
+
+          <div>
+            <p>Day</p>
+            <input
+              type="number"
+              id="day"
+              name="day"
+              min="1"
+              max="31"
+              id="day-input"
+              required
+            />
+          </div>
+    
+          <div>
+            <p>Month</p>
+            <input
+              type="number"
+              id="month"
+              name="month"
+              min="1"
+              max="12"
+              id="month-input"
+              required
+            />
+          </div>
+    
+          <div>
+            <p>Year</p>
+            <input
+              type="number"
+              id="year"
+              name="year"
+              min="1900"
+              max="2024"
+              id="year-input"
+              required
+            />
+          </div>
+        </div>
+
         <button type="submit">
           <img src="./assets/images/icon-arrow.svg" alt="Submit"/>
         </button>
