@@ -18,17 +18,30 @@ body {
 
 input {
     font-size: 32px;
+    font-weight: 600;
+    margin-right: .5em;
+    margin-bottom: 1.5em;
 }
 
 .container {
     background-color: var(--white);
     padding: 2em;
+    margin: 1em;
+    border-radius: 20px;
+    border-bottom-right-radius: 50%;
 }
 
 .age-inputs {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -51,4 +64,22 @@ form button {
     border: none;
     padding: 1.25em;
     border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 2.5em;;
+}
+
+form button img {
+    width: 35px;
+    height: 30px;
+}
+
+span {
+    color: var(--purple);
+}
+
+#age-results p {
+    font-size: 3.5em;
+    margin: 0;
+    font-weight: 800;
+    font-style: italic;
 }
