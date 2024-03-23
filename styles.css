@@ -25,8 +25,8 @@ body {
   padding: 2em;
   margin: 1em;
   border-radius: 20px;
-  border-bottom-right-radius: 50%;
-  max-width: 768px;
+  border-bottom-right-radius: 35%;
+  max-width: 700px;
   width: 375px;
 }
 
@@ -110,10 +110,15 @@ span {
     .container {
       width: 100%;
     }
+    form {
+      align-items: flex-start;
+    }
     form input {
-      form {
-        
-      }
+      margin-right: 1em;
+      padding: .5em 1em;
+    }
+    form button {
+      margin-left: 92%;
     }
   }
   
