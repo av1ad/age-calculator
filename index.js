@@ -1,36 +1,37 @@
-const yearsId = document.getElementById("years");
-const monthsId = document.getElementById("months");
-const daysId = document.getElementById("days");
-const form = document.getElementById('ageForm')
+const form = document.getElementById('ageForm');
+const outputElements = {
+  years: document.getElementById("years"),
+  months: document.getElementById("months"),
+  days: document.getElementById("days")
+};
 
-// Age calculator
-function ageCalculator(e) {
+form.addEventListener('submit', e => {
   e.preventDefault();
-  const dayInputValue = document.getElementById("day").value;
-  const monthInputValue = document.getElementById("month").value;
-  const yearInputValue = document.getElementById("year").value;
+  const { day, month, year } = e.target.elements;
+  const age = calculateAge(new Date(year.value, month.value - 1, day.value));
+  Object.entries(age).forEach(([key, value]) => outputElements[key].textContent = value);
+});
 
-  const birthDate = new Date(yearInputValue, monthInputValue - 1, dayInputValue); 
+function calculateAge(birthDate) {
   const today = new Date();
+  const yearsDiff = today.getFullYear() - birthDate.getFullYear();
+  const monthsDiff = today.getMonth() - birthDate.getMonth();
+  const daysDiff = today.getDate() - birthDate.getDate();
 
-  let years = today.getFullYear() - birthDate.getFullYear();
-  let months = today.getMonth() - birthDate.getMonth();
-  let days = today.getDate() - birthDate.getDate();
+  let years = yearsDiff;
+  let months = monthsDiff;
+  let days = daysDiff;
 
-  if(months < 0 || (months === 0 && days < 0) ) {
+  if (months < 0 || (months === 0 && days < 0)) {
     years--;
     months += 12;
-   }
+  }
 
-   if (days < 0) {
+  if (days < 0) {
     const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 0);
     days += lastMonth.getDate();
     months--;
-   }
+  }
 
-   yearsId.innerHTML = years;
-   monthsId.innerHTML = months;
-   daysId.innerHTML = days;
+  return { years, months, days };
 }
-
-form.addEventListener('submit', ageCalculator)
